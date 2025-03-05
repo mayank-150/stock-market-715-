@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockPro - Trading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Reset and Global Variables */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f7f9;
+            --card-background: #ffffff;
+            --text-primary: #2c3e50;
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar .nav-item {
+            margin-bottom: 15px;
+        }
+
+        .sidebar .nav-item a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar .nav-item a:hover, 
+        .sidebar .nav-item.active a {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .sidebar .nav-item a i {
+            margin-right: 10px;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .trading {
+            background-color: var(--background-color);
+        }
+
+        .trade-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .trade-section h1 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .trade-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .trade-card {
+            flex: 1;
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .trade-card h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .trade-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trade-form input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .trade-form button {
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .trade-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .buy-card h2 {
+            color: var(--secondary-color);
+        }
+
+        .sell-card h2 {
+            color: #e74c3c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .sidebar ul {
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-around;
+            }
+
+            .trade-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5726/5726085.png" alt="StockPro Logo">
+                <h2>StockPro</h2>
+            </div>
+            <ul>
+                <li class="nav-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">
+                        <i class="fas fa-briefcase"></i>
+                        <span>My Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="trading.html">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Trading Center</h1>
+                <div class="user-profile">
+                    <i class="fas fa-user"></i> Welcome, Investor
+                </div>
+            </header>
+
+            <div class="page-content trading">
+                <section class="trade-section">
+                    <h1>Stock Trading</h1>
+                    <div class="trade-container">
+                        <div class="trade-card buy-card">
+                            <h2>Buy Stocks</h2>
+                            <form class="trade-form">
+                                <input type="text" placeholder="Stock Symbol">
+                                <input type="number" placeholder="Quantity">
+                                <button type="submit">Buy</button>
+                            </form>
+                        </div>
+                        <div class="trade-card sell-card">
+                            <h2>Sell Stocks</h2>
+                            <form class="trade-form">
+                                <input type="text" placeholder="Stock Symbol">
+                                <input type="number" placeholder="Quantity">
+                                <button type="submit">Sell</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

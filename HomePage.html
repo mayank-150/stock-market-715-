@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockPro - Comprehensive Market Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="StockPro Logo">
+                <h2>StockPro</h2>
+            </div>
+            <ul>
+                <li class="nav-item active">
+                    <a href="#dashboard" data-page="dashboard">
+                        <i class="icon dashboard-icon"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" data-page="portfolio">
+                        <i class="icon portfolio-icon"></i>
+                        <span>My Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#market-analysis" data-page="market-analysis">
+                        <i class="icon analysis-icon"></i>
+                        <span>Market Analysis</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#trading" data-page="trading">
+                        <i class="icon trading-icon"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#alerts" data-page="alerts">
+                        <i class="icon alerts-icon"></i>
+                        <span>Price Alerts</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="logout-btn">Logout</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search stocks, ETFs...">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="icon notification-icon"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="profile-pic">
+                        <img src="/api/placeholder/40/40" alt="User Profile">
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content" id="dashboard">
+                <section class="market-overview">
+                    <div class="overview-card market-trends">
+                        <h3>Market Trends</h3>
+                        <div class="trend-indicators">
+                            <div class="trend-item">
+                                <span>S&P 500</span>
+                                <span class="positive">+2.3%</span>
+                            </div>
+                            <div class="trend-item">
+                                <span>NASDAQ</span>
+                                <span class="negative">-0.7%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overview-card stock-performance">
+                        <h3>Top Performers</h3>
+                        <ul class="performance-list">
+                            <li>
+                                <span>AAPL</span>
+                                <span class="positive">+4.5%</span>
+                            </li>
+                            <li>
+                                <span>GOOGL</span>
+                                <span class="positive">+3.2%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="interactive-graph">
+                    <div class="graph-container">
+                        <div class="graph-controls">
+                            <button class="active">1D</button>
+                            <button>1W</button>
+                            <button>1M</button>
+                            <button>1Y</button>
+                        </div>
+                        <div class="graph-placeholder">
+                            Stock Graph Placeholder
+                        </div>
+                    </div>
+                </section>
+
+                <section class="quick-actions">
+                    <div class="action-grid">
+                        <div class="action-card">
+                            <i class="icon buy-icon"></i>
+                            <span>Buy Stocks</span>
+                        </div>
+                        <div class="action-card">
+                            <i class="icon sell-icon"></i>
+                            <span>Sell Stocks</span>
+                        </div>
+                        <div class="action-card">
+                            <i class="icon watchlist-icon"></i>
+                            <span>Watchlist</span>
+                        </div>
+                        <div class="action-card">
+                            <i class="icon reports-icon"></i>
+                            <span>Reports</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
